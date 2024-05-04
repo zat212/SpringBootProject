@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+</head>
+<body>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        All Member Table
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book:${ListBooks}">
+                <td>[[${book.Id}]]</td>
+                <td th:text = "${book.ISBN}"></td>
+                <td th:text = "${book.bookTitle}"></td>
+                <td th:text = "${book.bookLocation}"></td>
+                <td th:text = "${book.bookStatus}"></td>
+                <!--                                            <td>-->
+                <!--                                                <a class="h5 mr-3" th:href="@{'/users/edit/' + ${book.id}}">Edit</a>-->
+                <!--                                                <a class="h5 mr-3" th:href="@{'/users/delete/' + ${book.id}}">Delete</a>-->
+                <!--                                            </td>-->
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
